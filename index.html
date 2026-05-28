@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Bistrot des Halles — Bistro français à Bruxelles centre</title>
+  <meta name="description" content="Bistro français traditionnel au cœur de Bruxelles. Cuisine de saison, produits belges, ambiance chaleureuse. Charlotte et Thomas vous accueillent rue du Marché aux Herbes.">
+
+  <meta property="og:title" content="Le Bistrot des Halles">
+  <meta property="og:description" content="La cuisine de Charlotte, depuis 2017. Bistro français à Bruxelles centre.">
+  <meta property="og:image" content="assets/photos/hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_BE">
+
+  <link rel="alternate" hreflang="fr" href="/" />
+  <link rel="alternate" hreflang="en" href="/en.html" />
+  <link rel="alternate" hreflang="nl" href="/nl.html" />
+  <link rel="alternate" hreflang="x-default" href="/" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Yeseva+One&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Le Bistrot des Halles",
+    "image": "assets/photos/hero.jpg",
+    "description": "Bistro français traditionnel au cœur de Bruxelles, produits belges de saison.",
+    "address": {"@type": "PostalAddress", "streetAddress": "Rue du Marché aux Herbes 87", "postalCode": "1000", "addressLocality": "Bruxelles", "addressCountry": "BE"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 50.8478, "longitude": 4.3536},
+    "telephone": "+32 2 511 38 47",
+    "email": "bonjour@bistrotdeshalles.be",
+    "servesCuisine": "French",
+    "priceRange": "€€",
+    "url": "https://bistrotdeshalles.be",
+    "acceptsReservations": true,
+    "hasMenu": "https://bistrotdeshalles.be/#menu",
+    "sameAs": ["https://instagram.com/bistrotdeshalles", "https://facebook.com/lebistrotdeshalles"],
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "12:00", "closes": "14:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "18:30", "closes": "22:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "12:00", "closes": "14:30"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "18:30", "closes": "23:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "15:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "18:30", "closes": "23:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "15:00"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="nav" aria-label="Navigation principale">
+    <a href="#" class="nav-logo"><img src="assets/logo.svg" alt="Le Bistrot des Halles" height="40"></a>
+    <ul class="nav-links">
+      <li><a href="#histoire">Histoire</a></li>
+      <li><a href="#chiffres">Maison</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#menu">Carte</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <ul class="lang-switcher">
+      <li><a href="/" aria-current="true">FR</a></li>
+      <li><a href="/en.html">EN</a></li>
+      <li><a href="/nl.html">NL</a></li>
+    </ul>
+    <a href="#reservation" class="nav-cta">Réserver</a>
+    <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile" id="nav-mobile" hidden>
+    <ul>
+      <li><a href="#histoire">Histoire</a></li>
+      <li><a href="#chiffres">Maison</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#menu">Carte</a></li>
+      <li><a href="#reservation">Réserver</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <ul class="lang-switcher-mobile" style="margin-top: 2rem; display: flex; gap: 1rem;">
+      <li><a href="/">FR</a></li><li><a href="/en.html">EN</a></li><li><a href="/nl.html">NL</a></li>
+    </ul>
+  </div>
+
+  <section class="hero-full">
+    <picture class="img-with-fallback" style="position: absolute; inset: 0; z-index: 0;">
+      <img src="assets/photos/hero.jpg" alt="La salle du Bistrot des Halles" class="hero-image" loading="eager">
+    </picture>
+    <div class="hero-content">
+      <span class="eyebrow hero-eyebrow">Bistro français · Bruxelles centre</span>
+      <h1 class="hero-title">Le Bistrot<br>des Halles</h1>
+      <p class="hero-slogan">La cuisine de Charlotte, depuis 2017.</p>
+      <a href="#reservation" class="btn-primary">Réserver une table</a>
+    </div>
+  </section>
+
+  <section class="producteurs-marquee" aria-label="Nos producteurs">
+    <div class="producteurs-marquee__track">
+      <span class="producteurs-marquee__item">Bœuf de Dierendonck, Saint-Idesbald</span>
+      <span class="producteurs-marquee__item">Poisson de la criée d'Ostende</span>
+      <span class="producteurs-marquee__item">Fromages affinés de l'Antre des Fromagers</span>
+      <span class="producteurs-marquee__item">Légumes de petits maraîchers belges</span>
+      <span class="producteurs-marquee__item">Pain maison cuit chaque matin</span>
+      <span class="producteurs-marquee__item">Vins nature sélectionnés par Thomas</span>
+      <span class="producteurs-marquee__item">Bœuf de Dierendonck, Saint-Idesbald</span>
+      <span class="producteurs-marquee__item">Poisson de la criée d'Ostende</span>
+      <span class="producteurs-marquee__item">Fromages affinés de l'Antre des Fromagers</span>
+      <span class="producteurs-marquee__item">Légumes de petits maraîchers belges</span>
+      <span class="producteurs-marquee__item">Pain maison cuit chaque matin</span>
+      <span class="producteurs-marquee__item">Vins nature sélectionnés par Thomas</span>
+    </div>
+  </section>
+
+  <section id="histoire" class="about container">
+    <div class="about-image" data-aos="fade-right">
+      <picture class="img-with-fallback"><img src="assets/photos/equipe-3.jpg" alt="Charlotte et Thomas devant le Bistrot des Halles"></picture>
+    </div>
+    <div class="about-content" data-aos="fade-left">
+      <span class="eyebrow">Notre histoire</span>
+      <h2 class="reveal-words">Charlotte &amp; Thomas</h2>
+      <p>Le Bistrot des Halles, c'est l'histoire de Charlotte Vandenberghe et de Thomas Lemaire — elle aux fourneaux après dix ans passés entre Lyon et le Périgord, lui en salle après une carrière dans le vin nature. Ils se sont rencontrés au marché des Halles Saint-Géry un samedi matin de 2016, et l'idée d'ouvrir un bistro à quelques pas est née là, entre deux étals.</p>
+      <p>Notre cuisine, c'est celle qu'on aimerait manger tous les jours : des produits de saison venus de petits maraîchers belges, des viandes sourcées chez Dierendonck à Saint-Idesbald, des poissons de la criée d'Ostende deux fois par semaine. La carte change toutes les six semaines, jamais plus de douze plats à la fois.</p>
+      <p>Ce qu'on veut, c'est qu'on se sente bien chez nous. Une lumière chaude, des conversations qui se croisent, une bouteille qu'on partage avec ses voisins de table. Le service est sans chichi mais attentif. Et oui, on fait notre pain.</p>
+    </div>
+  </section>
+
+  <section id="chiffres" class="en-chiffres" data-aos="fade-up">
+    <div class="container">
+      <div class="en-chiffres__grid">
+        <div class="en-chiffres__intro">
+          <span class="eyebrow">La maison</span>
+          <h2 class="reveal-words">Une cuisine qui ne triche pas.</h2>
+          <p>Tout ce qu'on sert, on le défend. Les producteurs sont nommés, la carte est courte, le rythme est saisonnier. Voilà ce que ça donne en chiffres.</p>
+        </div>
+        <div class="en-chiffres__stats">
+          <div class="stat"><span class="stat__chiffre counter" data-target="2017" data-duration="2200">2017</span><span class="stat__label">l'année d'ouverture, rue du Marché aux Herbes</span></div>
+          <div class="stat"><span class="stat__chiffre counter" data-target="6" data-suffix=" sem." data-duration="1400">6 sem.</span><span class="stat__label">le rythme de renouvellement de la carte</span></div>
+          <div class="stat"><span class="stat__chiffre counter" data-target="12" data-duration="1500">12</span><span class="stat__label">plats à la carte, jamais davantage</span></div>
+          <div class="stat"><span class="stat__chiffre counter" data-target="3" data-duration="1200">3</span><span class="stat__label">producteurs nommés sur chaque assiette</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" class="galerie-section">
+    <div class="container">
+      <div data-aos="fade-up" style="text-align:center;">
+        <span class="eyebrow">Galerie</span>
+        <h2 class="reveal-words">L'atmosphère</h2>
+      </div>
+      <div class="galerie-filtres" data-aos="fade-up">
+        <button data-filtre="all" class="actif">Tout</button>
+        <button data-filtre="plats">Plats</button>
+        <button data-filtre="interieur">Salle</button>
+        <button data-filtre="equipe">Équipe</button>
+        <button data-filtre="evenements">Soirées</button>
+      </div>
+      <div class="galerie" id="galerie-grid" data-aos="fade-up">
+        <!-- 5 photos visibles d'emblée -->
+        <picture class="img-with-fallback" data-cat="plats"><img src="assets/photos/plat-1.jpg" alt="Tartare de bœuf au couteau" loading="lazy"></picture>
+        <picture class="img-with-fallback" data-cat="plats"><img src="assets/photos/plat-2.jpg" alt="Joue de bœuf braisée" loading="lazy"></picture>
+        <picture class="img-with-fallback" data-cat="plats"><img src="assets/photos/plat-3.jpg" alt="Cabillaud rôti au beurre blanc" loading="lazy"></picture>
+        <picture class="img-with-fallback" data-cat="interieur"><img src="assets/photos/interieur-1.jpg" alt="Salle du bistro" loading="lazy"></picture>
+        <picture class="img-with-fallback" data-cat="equipe"><img src="assets/photos/equipe-1.jpg" alt="Charlotte en cuisine" loading="lazy"></picture>
+
+        <!-- 6e : trigger "Voir plus" (la photo la plus engageante) -->
+        <picture class="img-with-fallback see-more-trigger" data-cat="equipe" data-see-more="+6"><img src="assets/photos/equipe-3.jpg" alt="Charlotte et Thomas devant le bistro" loading="lazy"></picture>
+
+        <!-- 6 extras cachées par défaut, révélées au clic -->
+        <picture class="img-with-fallback galerie-extra" data-cat="plats"><img src="assets/photos/plat-4.jpg" alt="Tarte tatin" loading="lazy"></picture>
+        <picture class="img-with-fallback galerie-extra" data-cat="interieur"><img src="assets/photos/interieur-2.jpg" alt="Comptoir en zinc" loading="lazy"></picture>
+        <picture class="img-with-fallback galerie-extra" data-cat="interieur"><img src="assets/photos/interieur-3.jpg" alt="Tables dressées" loading="lazy"></picture>
+        <picture class="img-with-fallback galerie-extra" data-cat="interieur"><img src="assets/photos/interieur-4.jpg" alt="Vue sur la rue" loading="lazy"></picture>
+        <picture class="img-with-fallback galerie-extra" data-cat="equipe"><img src="assets/photos/equipe-2.jpg" alt="Thomas au service" loading="lazy"></picture>
+        <picture class="img-with-fallback galerie-extra" data-cat="evenements"><img src="assets/photos/evenement-1.jpg" alt="Soirée vin nature" loading="lazy"></picture>
+      </div>
+
+      <!-- Bouton "Voir moins" visible uniquement quand la galerie est dépliée -->
+      <div class="galerie-less-wrap">
+        <button type="button" class="galerie-less" aria-label="Réduire la galerie">Voir moins</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <div class="container--narrow">
+      <div data-aos="fade-up">
+        <span class="eyebrow" style="text-align:center; display:block;">Carte hiver 2026</span>
+        <h2 class="reveal-words" style="text-align:center;">La carte du moment</h2>
+        <div class="divider-ornament"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M12 3v18"/></svg></div>
+        <p style="text-align:center; font-style:italic; color:var(--color-secondary); margin-bottom:3rem;">La carte change toutes les six semaines.</p>
+      </div>
+
+      <div class="menu-section" data-aos="fade-up">
+        <h3>Pour commencer</h3>
+        <div class="menu-item"><span class="menu-item__nom">Œuf parfait, mousseline de céleri rave, noisettes torréfiées</span><span class="menu-item__dots"></span><span class="menu-item__prix">13 €</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Tartare de bœuf au couteau, condiments maison, frites allumettes</span><span class="menu-item__dots"></span><span class="menu-item__prix">16 €</span><span class="menu-item__desc">Bœuf de chez Dierendonck</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Croquettes aux crevettes grises d'Ostende</span><span class="menu-item__dots"></span><span class="menu-item__prix">15 €</span><span class="menu-item__desc">Recette de la grand-mère de Thomas</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Velouté de potimarron, huile de courge, graines toastées</span><span class="menu-item__dots"></span><span class="menu-item__prix">11 €</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Burrata des Pouilles, butternut rôtie, vinaigrette aux noix</span><span class="menu-item__dots"></span><span class="menu-item__prix">14 €</span></div>
+      </div>
+
+      <div class="menu-section" data-aos="fade-up">
+        <h3>Pour la suite</h3>
+        <div class="menu-item"><span class="menu-item__nom">Joue de bœuf braisée, purée maison, jus court</span><span class="menu-item__dots"></span><span class="menu-item__prix">24 €</span><span class="menu-item__desc">Cuite 8 heures</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Cabillaud rôti, fenouil confit, beurre blanc aux agrumes</span><span class="menu-item__dots"></span><span class="menu-item__prix">26 €</span><span class="menu-item__desc">Arrivage de la criée d'Ostende</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Suprême de pintade fermière, polenta crémeuse, jus aux herbes</span><span class="menu-item__dots"></span><span class="menu-item__prix">25 €</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Risotto aux champignons des bois, parmesan affiné 24 mois</span><span class="menu-item__dots"></span><span class="menu-item__prix">22 €</span><span class="menu-item__desc">Végétarien</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Entrecôte black angus 250g, frites maison, salade verte</span><span class="menu-item__dots"></span><span class="menu-item__prix">28 €</span><span class="menu-item__desc">Sauce au choix : poivre, béarnaise, échalote</span></div>
+      </div>
+
+      <div class="menu-section" data-aos="fade-up">
+        <h3>Pour finir</h3>
+        <div class="menu-item"><span class="menu-item__nom">Tarte tatin, glace vanille bourbon</span><span class="menu-item__dots"></span><span class="menu-item__prix">9 €</span><span class="menu-item__desc">À partager</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Moelleux au chocolat noir 70%, crème glacée caramel beurre salé</span><span class="menu-item__dots"></span><span class="menu-item__prix">9 €</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Sélection de fromages affinés de l'Antre des Fromagers</span><span class="menu-item__dots"></span><span class="menu-item__prix">12 €</span><span class="menu-item__desc">5 fromages</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Café gourmand, trois mignardises maison</span><span class="menu-item__dots"></span><span class="menu-item__prix">8 €</span></div>
+      </div>
+
+      <div class="menu-section" data-aos="fade-up" style="background: var(--color-bg); padding: 2rem; border: 1px solid var(--color-accent); margin-top: 3rem;">
+        <h3 style="color: var(--color-accent);">Le menu du midi</h3>
+        <p style="text-align:center; font-style:italic; opacity:0.7; margin-bottom:1.5rem;">Du mardi au vendredi, midi seulement.</p>
+        <div class="menu-item"><span class="menu-item__nom">Entrée + plat <em>ou</em> plat + dessert</span><span class="menu-item__dots"></span><span class="menu-item__prix">22 €</span></div>
+        <div class="menu-item"><span class="menu-item__nom">Entrée + plat + dessert</span><span class="menu-item__dots"></span><span class="menu-item__prix">28 €</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservation" class="reservation">
+    <div class="container--narrow">
+      <span class="eyebrow" style="color: var(--color-accent);">Réservation</span>
+      <h2 class="reveal-words">Une table chez nous</h2>
+      <p style="font-style:italic; opacity:0.85; max-width:42ch; margin: 0 auto 2rem;">38 couverts, service midi et soir du mardi au samedi, dimanche midi. La réservation se fait via TheFork ou par téléphone au <a href="tel:+3225113847" style="color: var(--color-accent); border-bottom: 1px dotted;">+32 2 511 38 47</a>.</p>
+      <a href="https://www.thefork.be/restaurant/le-bistrot-des-halles-r758421" target="_blank" rel="noopener" class="btn-primary">Réserver sur TheFork</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div data-aos="fade-up" style="margin-bottom: 3rem;">
+        <span class="eyebrow">Nous trouver</span>
+        <h2 class="reveal-words">Rue du Marché aux Herbes 87</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <address>
+            <p>Rue du Marché aux Herbes 87<br>1000 Bruxelles, Belgique</p>
+            <p><a href="tel:+3225113847">+32 2 511 38 47</a><br><a href="mailto:bonjour@bistrotdeshalles.be">bonjour@bistrotdeshalles.be</a></p>
+          </address>
+          <h3 style="margin-top:2rem;">Horaires</h3>
+          <dl class="horaires">
+            <dt>Lundi</dt><dd>fermé</dd>
+            <dt>Mardi → Jeudi</dt><dd>12:00–14:30 · 18:30–22:30</dd>
+            <dt>Vendredi</dt><dd>12:00–14:30 · 18:30–23:00</dd>
+            <dt>Samedi</dt><dd>12:00–15:00 · 18:30–23:00</dd>
+            <dt>Dimanche</dt><dd>12:00–15:00</dd>
+          </dl>
+          <h3 style="margin-top:2rem;">Suivez-nous</h3>
+          <ul style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+            <li><a href="https://instagram.com/bistrotdeshalles" target="_blank" rel="noopener" style="border-bottom: 1px dotted var(--color-accent); color: var(--color-accent);">Instagram</a></li>
+            <li><a href="https://facebook.com/lebistrotdeshalles" target="_blank" rel="noopener" style="border-bottom: 1px dotted var(--color-accent); color: var(--color-accent);">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="contact-map" data-aos="fade-left">
+          <iframe src="https://www.google.com/maps?q=Rue+du+March%C3%A9+aux+Herbes+87+1000+Bruxelles&output=embed" width="100%" height="100%" style="border:0; min-height:400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation Le Bistrot des Halles"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo.svg" alt="Le Bistrot des Halles" height="48" style="filter: invert(0.95);">
+          <p style="margin-top: 1rem; font-style: italic; opacity: 0.85;">La cuisine de Charlotte,<br>depuis 2017.</p>
+        </div>
+        <div><h4>Adresse</h4><p>Rue du Marché aux Herbes 87<br>1000 Bruxelles</p></div>
+        <div><h4>Contact</h4><p><a href="tel:+3225113847">+32 2 511 38 47</a><br><a href="mailto:bonjour@bistrotdeshalles.be">bonjour@bistrotdeshalles.be</a></p></div>
+        <div><h4>Réseaux</h4><ul><li><a href="https://instagram.com/bistrotdeshalles" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://facebook.com/lebistrotdeshalles" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">© <span id="year"></span> Le Bistrot des Halles. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

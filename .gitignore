@@ -1,0 +1,10 @@
+# Brief client (contient prix tier, contacts, données business — ne jamais publier)
+client-data.json
+
+# Fichiers macOS
+.DS_Store
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp

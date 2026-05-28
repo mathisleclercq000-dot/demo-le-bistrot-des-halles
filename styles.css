@@ -1,0 +1,660 @@
+/* ============================================================
+   MOOD : BISTRO — CSS pré-fait pour démarrage rapide
+   À copier dans output/<slug>/styles.css puis personnaliser.
+   Voir references/moods.md § Bistro pour la doctrine complète.
+   ============================================================ */
+
+/* ===== VARIABLES ============================================ */
+:root {
+  /* Palette Bistro */
+  --color-bg: #f5ede1;          /* crème chaude */
+  --color-text: #2c1810;        /* brun chocolat profond */
+  --color-accent: #c84b3a;      /* rouge tomate mat */
+  --color-secondary: #6b4423;   /* brun terre cuite */
+  --color-subtle: #e8d9c0;      /* beige ardoise */
+  --color-slate: #1a1612;       /* ardoise noire pour blocs */
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-script: 'Yeseva One', 'Playfair Display', serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-hand: 'Caveat', cursive;  /* pour signatures / ardoise — optionnel */
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 760px;
+  --section-padding: clamp(4rem, 10vh, 8rem);
+  --gap: clamp(1rem, 2vw, 2rem);
+}
+
+/* ===== GOOGLE FONTS — À AJOUTER DANS <head> ================
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Yeseva+One&family=Caveat:wght@500&display=swap" rel="stylesheet">
+============================================================ */
+
+/* ===== RESET ================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+ul, ol { list-style: none; }
+
+/* ===== TYPOGRAPHY =========================================== */
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weight: 400; }
+h1 { font-size: clamp(2.5rem, 7vw, 5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); margin-bottom: 1.5rem; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+h4 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.eyebrow { font-family: var(--font-body); font-style: italic; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.75rem; color: var(--color-accent); margin-bottom: 1rem; display: block; }
+.script { font-family: var(--font-script); }
+.handwritten { font-family: var(--font-hand); }
+
+/* Drop-cap pour la première lettre de l'histoire (détail signature) */
+.about-content > p:first-child::first-letter {
+  font-family: var(--font-script);
+  font-size: 4.5rem;
+  line-height: 0.9;
+  float: left;
+  margin: 0.4rem 0.5rem 0 0;
+  color: var(--color-accent);
+}
+
+/* ===== LAYOUT =============================================== */
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 6vw; }
+.container--narrow { max-width: var(--container-narrow); margin: 0 auto; padding: 0 6vw; }
+section { padding-block: var(--section-padding); }
+
+/* Divider ornemental Bistro */
+.divider-ornament {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1rem; margin: 2rem auto; max-width: 200px;
+}
+.divider-ornament::before, .divider-ornament::after {
+  content: ''; flex: 1; height: 1px; background: var(--color-secondary); opacity: 0.4;
+}
+.divider-ornament svg { width: 24px; height: 24px; color: var(--color-accent); }
+
+/* ===== NAV ================================================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100; padding: 1.5rem 6vw;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background 300ms, padding 300ms, box-shadow 300ms;
+}
+.nav--scrolled {
+  background: rgba(245, 237, 225, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 6vw;
+  box-shadow: 0 1px 0 rgba(44, 24, 16, 0.08);
+}
+.nav-logo img { height: 40px; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { font-family: var(--font-body); font-size: 0.95rem; position: relative; padding: 0.25rem 0; transition: color 250ms; }
+.nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--color-accent); transition: width 250ms; }
+.nav-links a:hover { color: var(--color-accent); }
+.nav-links a:hover::after { width: 100%; }
+.lang-switcher { display: flex; gap: 0.5rem; font-size: 0.85rem; }
+.lang-switcher a { padding: 0.25rem 0.5rem; opacity: 0.5; transition: opacity 250ms; }
+.lang-switcher a:hover, .lang-switcher a[aria-current="true"] { opacity: 1; color: var(--color-accent); }
+.nav-cta {
+  background: var(--color-accent); color: var(--color-bg);
+  padding: 0.75rem 1.5rem; font-family: var(--font-body); font-size: 0.85rem;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: background 250ms;
+}
+.nav-cta:hover { background: var(--color-secondary); }
+
+/* Burger mobile — voir components-library.md pour le HTML/JS */
+.nav-burger { display: none; background: none; border: none; padding: 0.5rem; }
+.nav-burger span { display: block; width: 28px; height: 2px; background: var(--color-text); margin: 6px 0; transition: transform 250ms, opacity 250ms; }
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.nav-mobile { position: fixed; inset: 0; background: var(--color-bg); z-index: 99; padding: 6rem 2rem 2rem; overflow-y: auto; }
+.nav-mobile a { display: block; padding: 1rem 0; font-family: var(--font-display); font-size: 1.75rem; border-bottom: 1px solid var(--color-subtle); }
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .lang-switcher { display: none; }
+  .nav-cta { display: none; }
+  .nav-burger { display: block; }
+}
+
+/* ===== HERO ================================================= */
+.hero-full {
+  position: relative; height: 100vh; min-height: 600px;
+  overflow: hidden; isolation: isolate;
+}
+.hero-image {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; z-index: 0;
+  animation: kenburns 22s ease-in-out infinite alternate;
+}
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.06) translate(-1%, -1%); } }
+.hero-full::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44, 24, 16, 0.65) 0%, rgba(44, 24, 16, 0.1) 50%, transparent 80%);
+  z-index: 1;
+}
+.hero-content {
+  position: absolute; bottom: 8vh; left: 6vw; z-index: 2;
+  color: var(--color-bg); max-width: 600px;
+}
+.hero-eyebrow { color: var(--color-bg); opacity: 0.85; }
+.hero-title { font-family: var(--font-script); margin-bottom: 1rem; }
+.hero-slogan { font-family: var(--font-body); font-style: italic; font-size: 1.15rem; margin-bottom: 2rem; opacity: 0.95; }
+
+/* ===== BOUTONS ============================================== */
+.btn-primary, .btn-secondary {
+  display: inline-block; padding: 1rem 2rem;
+  font-family: var(--font-body); font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: 0.85rem; transition: background 300ms, color 300ms, transform 250ms;
+}
+.btn-primary { background: var(--color-accent); color: var(--color-bg); border: 1px solid var(--color-accent); }
+.btn-primary:hover { background: var(--color-secondary); border-color: var(--color-secondary); }
+.btn-secondary { background: transparent; color: var(--color-text); border: 1px solid var(--color-text); }
+.btn-secondary:hover { background: var(--color-text); color: var(--color-bg); }
+
+/* ===== ABOUT — asymétrie obligatoire ======================== */
+.about {
+  display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; align-items: center;
+}
+.about-image {
+  position: relative;
+}
+.about-image::before {
+  content: ''; position: absolute;
+  top: 1.5rem; left: 1.5rem; right: -1.5rem; bottom: -1.5rem;
+  border: 2px solid var(--color-accent); z-index: -1;
+}
+@media (max-width: 768px) {
+  .about { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ===== MENU — liste à pointillés (signature Bistro) ========= */
+.menu { background: var(--color-subtle); }
+.menu h2 { text-align: center; }
+.menu-section { margin-bottom: 4rem; }
+.menu-section h3 { text-align: center; font-style: italic; color: var(--color-secondary); }
+.menu-item {
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: baseline; gap: 0.75rem; padding: 1rem 0;
+  border-bottom: 1px solid rgba(44, 24, 16, 0.08);
+}
+.menu-item__nom { font-family: var(--font-display); font-size: 1.15rem; }
+.menu-item__dots { border-bottom: 1px dotted var(--color-secondary); align-self: flex-end; margin-bottom: 0.4rem; opacity: 0.5; }
+.menu-item__prix { font-family: var(--font-display); font-size: 1.15rem; color: var(--color-accent); }
+.menu-item__desc { grid-column: 1 / -1; font-style: italic; font-size: 0.9rem; opacity: 0.7; margin-top: 0.25rem; }
+
+/* ===== ARDOISE SVG (détail signature possible) ============== */
+.ardoise {
+  background: var(--color-slate);
+  color: #f4ead7;
+  padding: 3rem 2rem;
+  border: 6px solid #2d2418;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), inset 0 0 60px rgba(255,255,255,0.04);
+  text-align: center;
+  position: relative;
+}
+.ardoise::before {
+  /* Effet craie texturée */
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+.ardoise h3 { font-family: var(--font-hand); font-size: 2.5rem; color: #f4ead7; margin-bottom: 0.5rem; }
+.ardoise .plat-du-jour { font-family: var(--font-hand); font-size: 1.75rem; }
+.ardoise .prix { font-family: var(--font-hand); font-size: 1.5rem; color: #d4a574; }
+
+/* ===== GALERIE catégorisée (Signature+) ===================== */
+.galerie-section { background: var(--color-bg); }
+.galerie-filtres { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.galerie-filtres button {
+  padding: 0.5rem 1.25rem; background: transparent;
+  border: 1px solid var(--color-text); color: var(--color-text);
+  font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.05em;
+  text-transform: uppercase; transition: all 250ms;
+}
+.galerie-filtres button.actif, .galerie-filtres button:hover {
+  background: var(--color-text); color: var(--color-bg);
+}
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--gap);
+}
+.galerie img { aspect-ratio: 4/3; object-fit: cover; transition: transform 400ms; }
+.galerie picture:hover img { transform: scale(1.04); }
+
+/* ===== RÉSERVATION — fond image fixe (parallax CSS) ========== */
+.reservation {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(44, 24, 16, 0.78), rgba(44, 24, 16, 0.62)),
+    url('assets/photos/interieur-2.jpg');
+  background-attachment: fixed;     /* la photo reste fixe pendant que le site scroll */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color-bg);
+  text-align: center;
+  isolation: isolate;
+}
+.reservation h2 { font-style: italic; color: var(--color-bg); }
+.reservation .eyebrow { color: var(--color-accent); }
+.reservation .btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  margin-top: 2rem;
+}
+.reservation .btn-primary:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-color: var(--color-bg);
+}
+
+/* Fallback mobile : background-attachment: fixed est ignoré / mal rendu sur mobile.
+   On retombe sur un scroll classique — l'image reste belle mais sans l'effet parallax. */
+@media (max-width: 768px) {
+  .reservation {
+    background-attachment: scroll;
+  }
+}
+
+/* ===== CONTACT + CARTE ====================================== */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; align-items: stretch; }
+.contact-info address { font-style: normal; line-height: 2; }
+.contact-info a { color: var(--color-accent); border-bottom: 1px dotted var(--color-accent); }
+.horaires { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; margin-top: 1rem; }
+.horaires dt { font-weight: 600; text-transform: capitalize; }
+.horaires dd { color: var(--color-secondary); }
+.contact-map { min-height: 400px; }
+.contact-map iframe { width: 100%; height: 100%; filter: sepia(15%) saturate(90%); /* matche le mood */ }
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== FOOTER =============================================== */
+.footer { background: var(--color-text); color: var(--color-bg); padding: 4rem 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+.footer h4 { font-family: var(--font-display); font-style: italic; margin-bottom: 1rem; color: var(--color-subtle); }
+.footer a:hover { color: var(--color-accent); }
+.footer-bottom { text-align: center; opacity: 0.6; font-size: 0.85rem; padding-top: 2rem; border-top: 1px solid rgba(245, 237, 225, 0.15); }
+
+/* ===== ACCESSIBILITY ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-image { animation: none; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   SIGNATURE — Le Bistrot des Halles
+   Détail signature 1 : Marquee défilant des producteurs
+   Détail signature 2 : Section "En chiffres" asymétrique
+   ============================================================ */
+
+/* MARQUEE PRODUCTEURS — juste sous le hero */
+.producteurs-marquee {
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  position: relative;
+  border-block: 1px solid rgba(245, 237, 225, 0.1);
+}
+.producteurs-marquee__track {
+  display: flex;
+  gap: 4rem;
+  animation: marquee 45s linear infinite;
+  width: max-content;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+.producteurs-marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+.producteurs-marquee__item::before {
+  content: '✦';
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.producteurs-marquee:hover .producteurs-marquee__track { animation-play-state: paused; }
+
+/* SECTION "EN CHIFFRES" — asymétrie structurelle */
+.en-chiffres {
+  background: var(--color-bg);
+  padding-block: var(--section-padding);
+  position: relative;
+}
+.en-chiffres__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+.en-chiffres__intro h2 {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.en-chiffres__intro p {
+  font-size: 1.1rem;
+  max-width: 36ch;
+  color: var(--color-secondary);
+}
+.en-chiffres__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 2.5rem;
+}
+.stat {
+  position: relative;
+  padding-top: 1rem;
+  border-top: 2px solid var(--color-accent);
+}
+/* Asymétrie : stats décalées les unes des autres */
+.stat:nth-child(2) { transform: translateY(2.5rem); }
+.stat:nth-child(3) { transform: translateY(-1.5rem); }
+.stat:nth-child(4) { transform: translateY(1rem); }
+
+.stat__chiffre {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.stat__label {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .en-chiffres__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .stat:nth-child(n) { transform: none; }
+}
+
+/* ============================================================
+   ANIMATIONS — niveau studio
+   1. Compteurs animés (En chiffres)
+   2. Galerie hover (zoom + caption overlay)
+   3. Menu lift au hover
+   4. Reveal des titres mot par mot
+   5. Magnetic CTA
+   6. Parallax léger du hero
+   ============================================================ */
+
+/* === 1. COMPTEURS === */
+/* (Logique en JS — pas de CSS spécifique, juste un état initial discret) */
+.counter[data-target] { font-variant-numeric: tabular-nums; }
+
+/* === GALERIE PAGINÉE ("Voir plus") === */
+/* Mode initial : on cache les .galerie-extra et on transforme la 8e en "voir plus" */
+
+/* Cacher les extras tant que la galerie n'est pas dépliée */
+#galerie-grid:not(.expanded) .galerie-extra {
+  display: none;
+}
+
+/* Trigger "Voir plus" : photo floutée + overlay + texte centré */
+#galerie-grid:not(.expanded) .see-more-trigger {
+  cursor: pointer;
+  position: relative;
+}
+#galerie-grid:not(.expanded) .see-more-trigger img {
+  filter: blur(6px) brightness(0.55) sepia(20%) saturate(95%) contrast(105%);
+  transform: scale(1.12); /* compense les bords flous */
+  transition: filter 400ms ease, transform 400ms ease;
+}
+#galerie-grid:not(.expanded) .see-more-trigger::after {
+  /* Override l'overlay hover de l'animation galerie */
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(44, 24, 16, 0.55), rgba(200, 75, 58, 0.35));
+  opacity: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+#galerie-grid:not(.expanded) .see-more-trigger::before {
+  /* Override la caption hover */
+  content: 'Voir plus';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transform: none;
+  z-index: 2;
+  padding: 1rem;
+  bottom: auto;
+}
+/* Petit chevron + compteur sous le "Voir plus" */
+#galerie-grid:not(.expanded) .see-more-trigger[data-see-more]::before {
+  /* Le ::before n'autorise qu'un contenu — on triche via un span dans le JS */
+}
+#galerie-grid:not(.expanded) .see-more-trigger:hover img {
+  filter: blur(4px) brightness(0.65) sepia(20%) saturate(95%) contrast(105%);
+  transform: scale(1.15);
+}
+
+/* Stagger reveal des extras quand la galerie se déplie (5 visibles + 1 trigger + 6 extras = positions 7-12) */
+#galerie-grid.expanded .galerie-extra {
+  animation: extraReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+#galerie-grid.expanded .galerie-extra:nth-child(7)  { animation-delay: 0ms; }
+#galerie-grid.expanded .galerie-extra:nth-child(8)  { animation-delay: 80ms; }
+#galerie-grid.expanded .galerie-extra:nth-child(9)  { animation-delay: 160ms; }
+#galerie-grid.expanded .galerie-extra:nth-child(10) { animation-delay: 240ms; }
+#galerie-grid.expanded .galerie-extra:nth-child(11) { animation-delay: 320ms; }
+#galerie-grid.expanded .galerie-extra:nth-child(12) { animation-delay: 400ms; }
+@keyframes extraReveal {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Bouton "Voir moins" : visible seulement quand la galerie est dépliée */
+.galerie-less-wrap {
+  display: none;
+  text-align: center;
+  margin-top: 2.5rem;
+  animation: extraReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: 500ms;
+}
+/* Le "Voir moins" n'a de sens que dans le filtre "Tout" (les autres filtres
+   affichent tout leur contenu d'office, pas de pagination = pas besoin de réduire) */
+#galerie-grid.expanded[data-filter="all"] ~ .galerie-less-wrap {
+  display: block;
+}
+.galerie-less {
+  background: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: background 250ms ease, color 250ms ease;
+}
+.galerie-less:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+.galerie-less::before {
+  content: '↑ ';
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+/* Quand la galerie est dépliée, la 8e redevient une photo normale */
+#galerie-grid.expanded .see-more-trigger img {
+  filter: sepia(20%) saturate(95%) contrast(105%) brightness(96%);
+  transform: none;
+}
+#galerie-grid.expanded .see-more-trigger { cursor: pointer; }
+
+/* === 2. GALERIE — zoom + caption overlay === */
+.galerie picture {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.galerie picture img {
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.galerie picture::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44, 24, 16, 0.85) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+.galerie picture::before {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.25rem 1.5rem;
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  z-index: 2;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 400ms ease, opacity 400ms ease;
+  pointer-events: none;
+}
+.galerie picture:hover img { transform: scale(1.07); }
+.galerie picture:hover::after { opacity: 1; }
+.galerie picture:hover::before { transform: translateY(0); opacity: 1; }
+
+/* === 3. MENU LIFT === */
+.menu-item {
+  transition: transform 250ms ease, box-shadow 250ms ease, padding 250ms ease;
+  border-radius: 4px;
+  padding-inline: 0.5rem;
+}
+.menu-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(44, 24, 16, 0.08);
+  padding-inline: 1rem;
+}
+
+/* === 4. REVEAL TITRES MOT PAR MOT === */
+.reveal-words .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.reveal-words.visible .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === 5. MAGNETIC CTA === */
+.magnetic {
+  display: inline-block;
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* === 6. PARALLAX HERO === */
+/* On désactive le Ken Burns CSS au profit du parallax JS scroll-based.
+   Les deux ensemble créent un conflit visuel (saut au scroll). */
+.hero-image {
+  animation: none;
+  will-change: transform;
+}
+
+/* Respect des préférences réduites */
+@media (prefers-reduced-motion: reduce) {
+  .galerie picture img,
+  .galerie picture::before,
+  .menu-item,
+  .reveal-words .word,
+  .magnetic,
+  .hero-image {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  .reveal-words .word { opacity: 1; }
+}
+
+/* ===== TRAITEMENT VISUEL DES PHOTOS (mockup) ================ */
+/* Filtre uniforme pour donner une cohérence Bistro warm aux photos.
+   À retirer ou ajuster quand les vraies photos client sont en place. */
+.img-with-fallback img,
+.hero-image,
+.galerie img,
+.about-image img {
+  filter: sepia(20%) saturate(95%) contrast(105%) brightness(96%);
+}
+/* Hero un peu plus dramatique */
+.hero-image {
+  filter: sepia(15%) saturate(90%) contrast(108%) brightness(85%);
+}
+
+/* ===== UTILS ================================================ */
+.img-with-fallback {
+  display: block; position: relative;
+  background:
+    linear-gradient(135deg, var(--color-subtle) 25%, transparent 25%) -10px 0,
+    linear-gradient(225deg, var(--color-subtle) 25%, transparent 25%) -10px 0,
+    var(--color-bg);
+  background-size: 20px 20px;
+  min-height: 200px;
+}
+.img-with-fallback img { width: 100%; height: 100%; object-fit: cover; display: block; }
